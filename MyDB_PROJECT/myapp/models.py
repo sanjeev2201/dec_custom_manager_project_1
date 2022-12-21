@@ -15,9 +15,10 @@ class Student(models.Model):
 #create Proxy_Student models here
 
 class Proxy_Student(Student):
+    proxy_manager = models.Manager()
     class Meta:
         proxy = True
-        proxy_manager = models.Manager()
+        
         db_table = 'Proxy_Student'
         ordering = ['name']
 
