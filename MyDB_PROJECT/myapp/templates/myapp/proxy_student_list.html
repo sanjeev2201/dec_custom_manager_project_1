@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,14 @@
     <title>proxy student list</title>
 </head>
 <body>
+  {% block pagecontent %}
     <table border="2">
           <thead>
             <tr>
                 <th>Roll Number</th>
                 <th> Name</th>
                 <th>Age</th>
+                <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -21,9 +24,17 @@
                 <td>{{student.roll_no}}</td>
                 <td>{{student.name}}</td>
                 <td>{{student.age}}</td>
+                <td>
+                  <a href="{% url 'update-proxy-student' student.pk %}">Edit</a>
+                  <a href="{% url 'delete-proxy-student' student.pk %}">Remove</a>
+                </td>
+
             </tr>
+            
             {%  endfor %}
           </tbody>
     </table>
+    <a href="{% url 'home' %}">Return-home-page</a>
+    {% endblock %}
 </body>
 </html>
