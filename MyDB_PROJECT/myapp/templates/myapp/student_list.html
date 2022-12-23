@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
     <title> student list</title>
 </head>
 <body>
+  {% block pagecontent %}
     <table border="2">
           <thead>
             <tr>
@@ -25,5 +27,7 @@
             {%  endfor %}
           </tbody>
     </table>
+    <a href="{% url 'home' %}">Return-home-page</a>
+    {% endblock %}
 </body>
 </html>
