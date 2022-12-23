@@ -1,0 +1,28 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home page </title>
+</head>
+<body>
+<img src="{% static 'Taj_Mahal_Agra.jpg' %}" alt="Taj Mahal">
+
+
+{% block pagecontent %}
+<div>
+    <a href="{% url 'student' %}"> create-student</a>
+    
+</div>
+<div>
+    <a href="{% url 'student-proxy' %}">create-proxy-student</a>
+</div>
+      {% endblock %}
+
+    
+</body>
+</html>
